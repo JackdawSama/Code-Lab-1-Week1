@@ -6,7 +6,7 @@ public class CactusSpawner : MonoBehaviour
 {
     public GameObject cactus;
     public float spawnTimer;
-    public float spawnDelay;
+    float spawnDelay;
 
     // Start is called before the first frame update
     void Start()

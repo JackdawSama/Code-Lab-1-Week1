@@ -166,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee3efc4dd9b2d7459bbc64e8c713fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cactus: {fileID: 8065657442726950609, guid: 14143d8ace9204e4bb8a4f2777f203b9, type: 3}
+  spawnTimer: 0
+  spawnDelay: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

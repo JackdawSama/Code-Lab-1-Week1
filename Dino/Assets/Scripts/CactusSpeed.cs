@@ -33,13 +33,7 @@ public class CactusSpeed : MonoBehaviour
         if(other.name == "Player")
         {
             Debug.Log("Player");
+            Destroy(other.gameObject);
         }
     }
-    }                  //checks for collision with object named Player
-//     {
-//         if(other.gameObject.tag == "Player")
-//         {
-//             Debug.Log("Object collided");
-//         }
-//     }
-// }
+    }

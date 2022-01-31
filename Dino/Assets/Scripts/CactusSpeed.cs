@@ -23,17 +23,17 @@ public class CactusSpeed : MonoBehaviour
 
         if(transform.position.x <= -9.25)                       //checks the position of the object and if out of bounds deletes it
         {
-            Destroy(gameObject);
+            Destroy(gameObject);                                //deletes the object when it goes out of bounds
         }
 
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "Player")
+        if(other.name == "Player")                              //checks if the name of the gameobject is Player
         {
-            Debug.Log("Player");
-            Destroy(other.gameObject);
+            Debug.Log("Player");                                //debug statement to check if the collision works
+            Destroy(other.gameObject);                          //on collision Player gets deleted
         }
     }
     }

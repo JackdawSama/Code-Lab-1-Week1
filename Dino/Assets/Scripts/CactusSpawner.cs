@@ -5,18 +5,27 @@ using UnityEngine;
 public class CactusSpawner : MonoBehaviour
 {
     public GameObject cactus;
-    public float spawnTimer;
+    Vector2 spawnLocation;
     float spawnDelay;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawner", spawnTimer, spawnDelay);                     //invokes the function spawner at timed intervals
+        spawnLocation = GameObject.Find("Spawner").transform.position;
+        Spawner();
+    }
+
+    void Update()
+    {
+
     }
 
     public void Spawner()
     {
-        spawnDelay = Random.Range(0.5f, 1.0f);                                  //randomises the delay inbetween spawns
-        Instantiate(cactus, transform.position, transform.rotation);           //creates an object at the said transform
+        spawnDelay = Random.Range(1.0f, 2.0f);                                          //randomises the delay inbetween spawns
+        Instantiate(cactus);                                                            //creates an object
+        cactus.transform.position = new Vector2(spawnLocation.x, spawnLocation.y);      //sets the created object's transform
+
+        Invoke("Spawner", spawnDelay);                                                  //function calls itself to repeat spawing of object
     }
 }

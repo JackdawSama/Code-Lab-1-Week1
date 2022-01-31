@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class CactusSpeed : MonoBehaviour
 {
-    public float moveSpeed = 3.0f;
+    public float moveSpeed = 2.0f;
+    Vector2 newPos;
+    
     // Start is called before the first frame update
     void Start()
     {
-        transform.Translate(Vector2.down * moveSpeed * Time.deltaTime); 
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x == -9.25)
+        newPos = transform.position;
+        newPos.x -= moveSpeed * Time.deltaTime;                 //makes the object move along the negative x-axis
+        transform.position = newPos;
+
+
+        if(transform.position.x <= -9.25)                       //checks the position of the object and if out of bounds deletes it
         {
             Destroy(gameObject);
         }

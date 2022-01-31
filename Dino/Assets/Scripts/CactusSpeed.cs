@@ -25,5 +25,14 @@ public class CactusSpeed : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+    }
+
+    void OnCollisionEnter2D(Collision2D other)                  //checks for collision with object named Player
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Debug.Log("Object collided");
+        }
     }
 }

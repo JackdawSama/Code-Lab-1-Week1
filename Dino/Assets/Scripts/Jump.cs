@@ -25,4 +25,11 @@ public class Jump : MonoBehaviour
         /*got the above code for jump force from https://gamedevbeginner.com/how-to-jump-in-unity-with-or-without-physics/#jump_unity and I have to go through the documentation to 
         understand what ForceMode2D and AddForce in general do*/
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Cactus")
+        {
+            Debug.Log("Hit");
+        }
+    }
 }

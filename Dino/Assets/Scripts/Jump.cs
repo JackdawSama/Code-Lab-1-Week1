@@ -18,7 +18,7 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))                                 //checks if SpaceBar is pressed
     {
         rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);           //adds a jump force to the object and smoothes it using ForceMode2D I guess.
     }

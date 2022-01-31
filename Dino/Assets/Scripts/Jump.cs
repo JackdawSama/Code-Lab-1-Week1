@@ -8,7 +8,7 @@ public class Jump : MonoBehaviour
     // public float gravity;
 
     Vector2 newPos;
-    public Rigidbody2D rb;
+    // public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,16 +20,20 @@ public class Jump : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
     {
-        rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);           //adds a jump force to the object and smoothes it using ForceMode2D I guess.
+        newPos = transform.position;
+        newPos.y += jumpSpeed * Time.deltaTime; 
+        transform.position = newPos;
+        // rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);           //adds a jump force to the object and smoothes it using ForceMode2D I guess.
     }
         /*got the above code for jump force from https://gamedevbeginner.com/how-to-jump-in-unity-with-or-without-physics/#jump_unity and I have to go through the documentation to 
         understand what ForceMode2D and AddForce in general do*/
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Cactus")
+        if(other.gameObject.name == "Ground")
         {
-            Debug.Log("Hit");
+            Debug.Log("Ground");
+            // Destroy(this);
         }
     }
 }

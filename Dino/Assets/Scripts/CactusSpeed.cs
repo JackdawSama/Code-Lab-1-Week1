@@ -30,9 +30,9 @@ public class CactusSpeed : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-                if(other.tag == "Player")
+        if(other.name == "Player")
         {
-            Debug.Log("Object collided");
+            Debug.Log("Player");
         }
     }
     }                  //checks for collision with object named Player

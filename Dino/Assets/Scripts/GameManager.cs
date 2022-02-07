@@ -12,20 +12,20 @@ public class GameManager : MonoBehaviour
 
     private void Awake() 
     {
-        if(instance != null && instance != this)
+        if(instance != null && instance != this)            //checks for an instance and if the said instance is the same
         {
-            Destroy(this);
+            Destroy(this);                                  //in case of both the conditions failing the instance is deleted
         }
         else 
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            instance = this;                                //in the case of both the conditions return true then the current instance is accepted to be the only instance
+            DontDestroyOnLoad(gameObject);                  //ensures that the game object is not deleted when a different scene is loaded
         }
     }
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);                      //ensures that the game object is not deleted when a different scene is loaded
     }
 
     // Update is called once per frame
@@ -36,10 +36,10 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game");                     //loads the Game Scene
     }
 
-    public static GameManager GetInstance()                     //function to access the private variable instance
+    public static GameManager GetInstance()                 //function to access the private variable instance
     {
         return instance;
     }

@@ -7,6 +7,6 @@ public class PlayAgain : MonoBehaviour
 {
     public void ChangeScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");     //loads the MainMenu scene
     }
 }

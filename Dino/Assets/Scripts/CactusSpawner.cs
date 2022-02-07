@@ -11,7 +11,7 @@ public class CactusSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnLocation = GameObject.Find("Spawner").transform.position;
+        spawnLocation = GameObject.Find("Spawner").transform.position;                  //sets the spawn location of the cactus to that of the spawner
         Spawner();
     }
 

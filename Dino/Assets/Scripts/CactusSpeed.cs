@@ -34,13 +34,13 @@ public class CactusSpeed : MonoBehaviour
         if(other.name == "Player")                              //checks if the name of the gameobject is Player
         {
             Debug.Log("Player");                                //debug statement to check if the collision works
-            GameManager.lives--;
+            GameManager.lives--;                                //reduces the lives the player has in case of a collision
             Debug.Log(GameManager.lives);
 
-            if(GameManager.lives < 1)
+            if(GameManager.lives < 1)                           //check is the player has 0 live and if true destroys the player object and shifts scene
             {
                 Destroy(other.gameObject);                      //on collision Player gets deleted
-                SceneManager.LoadScene("Replay");
+                SceneManager.LoadScene("Replay");               //on the event of player object being destroyed the Replay scene is loaded
             }
         }
     }

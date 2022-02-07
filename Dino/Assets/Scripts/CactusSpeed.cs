@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CactusSpeed : MonoBehaviour
 {
@@ -33,7 +34,14 @@ public class CactusSpeed : MonoBehaviour
         if(other.name == "Player")                              //checks if the name of the gameobject is Player
         {
             Debug.Log("Player");                                //debug statement to check if the collision works
-            Destroy(other.gameObject);                          //on collision Player gets deleted
+            GameManager.lives--;
+            Debug.Log(GameManager.lives);
+
+            if(GameManager.lives < 1)
+            {
+                Destroy(other.gameObject);                      //on collision Player gets deleted
+                SceneManager.LoadScene("Replay");
+            }
         }
     }
     }
